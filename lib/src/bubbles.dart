@@ -2,10 +2,9 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:floating_bubbles/src/bubble_painter.dart';
+import 'package:floating_bubbles/src/bubble_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
-
-import 'bubble_animation.dart';
 
 enum BubbleShape { circle, square, roundedRectangle }
 
@@ -26,8 +25,6 @@ class FloatingBubbles extends StatefulWidget {
   final List<Color> bubbleColors;
   final PaintingStyle paintingStyle;
   int? duration;
-
-  bool get durationBool => duration != null && duration != 0;
 
   FloatingBubbles({
     required this.bubbleColors,
@@ -96,7 +93,7 @@ class _FloatingBubblesState extends State<FloatingBubbles> {
               .bubbleColors[randomValue.nextInt(widget.bubbleColors.length)],
           bubbleSpeed: widget.bubbleSpeed));
     }
-    if (widget.durationBool)
+    if (widget.duration != null && widget.duration != 0)
       Timer(Duration(seconds: widget.duration!), () {
         setState(() {
           checkToStopAnimation = 1;
@@ -113,7 +110,7 @@ class _FloatingBubblesState extends State<FloatingBubbles> {
 
   @override
   Widget build(BuildContext context) {
-    return widget.durationBool
+    return widget.duration != null && widget.duration == 0
         ? LoopAnimation(
             tween: ConstantTween(1),
             builder: (context, child, value) {
