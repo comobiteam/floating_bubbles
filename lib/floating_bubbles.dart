@@ -1,9 +1,9 @@
 /// ### Floating Bubbles Widget
 ///
-/// With this Floating Bubbles Package, you can easily add bubbles which float from
-/// bottom to top to any widget using a Stack.
+/// With the `floating_bubbles` package, you can easily add bubbles
+/// which float from the bottom to the top of your screen.
 ///
-/// For Example
+/// For example:
 ///
 /// ```
 ///   return Stack(
@@ -15,18 +15,18 @@
 ///        ),
 ///       Positioned.fill(
 ///           child: FloatingBubbles.alwaysRepeating(
-///           noOfBubbles: 40,
-///           colorOfBubbles: Colors.white,
+///           numOfOnScreenBubbles: 40,
+///           bubbleColors: [Colors.white, Colors.red],
 ///           sizeFactor: 0.2,
-///           opacity: 70,
+///           bubbleColorAlpha: 70,
 ///           paintingStyle: PaintingStyle.fill,
-///           shape: BubbleShape.circle, //This is the default
+///           shape: BubbleShape.circle,
 ///          ),
 ///       ),
 ///     ],
 ///   );
 /// ```
-/// This was made with the help of Simple Animation package.
+/// This was made with the help of the `simple_animations` package.
 library floating_bubbles;
 
 export 'src/bubbles.dart';
