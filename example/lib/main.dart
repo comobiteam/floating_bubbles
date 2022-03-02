@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
             bubbleColorAlpha: 70,
             bubbleColors: [Colors.red, Colors.blue, Colors.purple],
             bubbleSpeed: Duration(seconds: 20),
-            numOfOnScreenBubbles: 5,
+            numOfBubblesOnScreen: 5,
             paintingStyle: PaintingStyle.fill,
             shape: BubbleShape.circle,
             sizeFactor: 0.2,

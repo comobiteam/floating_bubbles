@@ -21,7 +21,7 @@ class FloatingBubbles extends StatefulWidget {
   final Duration bubbleSpeed;
   final double sizeFactor;
   final double strokeWidth;
-  final int numOfOnScreenBubbles;
+  final int numOfBubblesOnScreen;
   final int bubbleColorAlpha;
   final List<Color> bubbleColors;
   final PaintingStyle paintingStyle;
@@ -32,7 +32,7 @@ class FloatingBubbles extends StatefulWidget {
   FloatingBubbles({
     required this.bubbleColors,
     required this.duration,
-    required this.numOfOnScreenBubbles,
+    required this.numOfBubblesOnScreen,
     required this.sizeFactor,
     this.bubbleSpeed = const Duration(seconds: 3),
     this.bubbleColorAlpha = 100,
@@ -56,7 +56,7 @@ class FloatingBubbles extends StatefulWidget {
   /// then use the constructor `FloatingBubbles()`.
   FloatingBubbles.alwaysRepeating({
     required this.bubbleColors,
-    required this.numOfOnScreenBubbles,
+    required this.numOfBubblesOnScreen,
     required this.sizeFactor,
     this.bubbleSpeed = const Duration(seconds: 3),
     this.bubbleColorAlpha = 60,
@@ -85,12 +85,15 @@ class _FloatingBubblesState extends State<FloatingBubbles> {
 
   final List<BubbleAnimation> bubbles = [];
 
+  final Random randomValue = Random();
+
   @override
   void initState() {
-    for (int i = 0; i < widget.numOfOnScreenBubbles; i++) {
+    for (int i = 0; i < widget.numOfBubblesOnScreen; i++) {
       bubbles.add(BubbleAnimation(
-          bubbleColor:
-              widget.bubbleColors[Random().nextInt(widget.bubbleColors.length)],
+          randomValue: randomValue,
+          bubbleColor: widget
+              .bubbleColors[randomValue.nextInt(widget.bubbleColors.length)],
           bubbleSpeed: widget.bubbleSpeed));
     }
     if (widget.durationBool)
