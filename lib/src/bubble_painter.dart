@@ -26,7 +26,7 @@ class BubblePainter extends CustomPainter {
       ..strokeWidth = strokeWidth
       ..style = paintingStyle;
 
-    bubbles.forEach((bubble) {
+    for (final bubble in bubbles) {
       final progress = bubble.progress();
       final MultiTweenValues animation = bubble.tween.transform(progress);
       final position = Offset(
@@ -61,7 +61,7 @@ class BubblePainter extends CustomPainter {
           paint..color = bubbleColor,
         );
       }
-    });
+    }
   }
 
   @override
