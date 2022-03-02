@@ -102,7 +102,6 @@ class _FloatingBubblesState extends State<FloatingBubbles> {
     super.initState();
   }
 
-  /// Uses the paint function in bubbles_painter.dart.
   CustomPaint paintBubbles({required CustomPainter bubbles}) {
     return CustomPaint(
       painter: bubbles,
