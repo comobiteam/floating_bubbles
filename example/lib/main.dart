@@ -23,10 +23,10 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // eachFrame()
-    //     .take(10000)
-    //     .transform(const ComputeFps())
-    //     .listen((fps) => print('fps: $fps'));
+    eachFrame()
+        .take(10000)
+        .transform(const ComputeFps())
+        .listen((fps) => print('fps: $fps'));
     return Stack(
       children: [
         Positioned.fill(
