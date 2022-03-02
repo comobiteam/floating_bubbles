@@ -38,8 +38,8 @@ class HomePage extends StatelessWidget {
           child: FloatingBubbles.alwaysRepeating(
             bubbleColorAlpha: 70,
             bubbleColors: [Colors.red, Colors.blue, Colors.purple],
-            bubbleSpeed: Duration(seconds: 10),
-            numOfBubblesOnScreen: 8,
+            bubbleSpeed: Duration(seconds: 20),
+            numOfBubblesOnScreen: 30,
             paintingStyle: PaintingStyle.fill,
             shape: BubbleShape.circle,
             sizeFactor: 0.2,
