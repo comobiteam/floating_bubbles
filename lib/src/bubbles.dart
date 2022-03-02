@@ -152,7 +152,7 @@ class _FloatingBubblesState extends State<FloatingBubbles> {
           );
   }
 
-  /// Checks whether the displayed bubbles have to be restarted due to
+  /// Checks whether the onscreen bubbles have to be restarted due to
   /// frame skips.
   _simulateBubbles() {
     bubbles.forEach((bubbles) => bubbles.checkIfBubbleNeedsToBeRestarted());
