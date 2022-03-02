@@ -33,6 +33,8 @@ class FloatingBubbles extends StatefulWidget {
   final double strokeWidth;
 
   /// Number of bubbles displayed on the screen at the same time.
+  ///
+  /// There should be at least one bubble.
   final int numOfBubblesOnScreen;
 
   /// Used to determine the degree of transparency of the bubble's color.
@@ -68,6 +70,10 @@ class FloatingBubbles extends StatefulWidget {
           sizeFactor > 0 && sizeFactor < 0.5,
           'Size factor cannot be less than 0 or greater than 0.5.',
         ),
+        assert(
+          numOfBubblesOnScreen >= 1,
+          'Number of bubbles on screen cannot be less than 1.',
+        ),
         assert(duration != null && duration >= 0,
             'Duration should not be null or less than 0.'),
         assert(
@@ -91,6 +97,10 @@ class FloatingBubbles extends StatefulWidget {
   })  : assert(
           sizeFactor > 0 && sizeFactor < 0.5,
           'Size factor cannot be less than 0 or greater than 0.5.',
+        ),
+        assert(
+          numOfBubblesOnScreen >= 1,
+          'Number of bubbles on screen cannot be less than 1.',
         ),
         assert(
           bubbleColorAlpha >= 0 && bubbleColorAlpha <= 255,
