@@ -23,21 +23,25 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    eachFrame().take(10000).transform(const ComputeFps()).listen((fps) => print('fps: $fps'));
+    // eachFrame()
+    //     .take(10000)
+    //     .transform(const ComputeFps())
+    //     .listen((fps) => print('fps: $fps'));
     return Stack(
       children: [
         Positioned.fill(
           child: Container(
-            color: Colors.blue,
+            color: Colors.white,
           ),
         ),
         Positioned.fill(
           child: FloatingBubbles.alwaysRepeating(
-            noOfBubbles: 10,
-            colorOfBubbles: Colors.white,
+            numOfOnScreenBubbles: 5,
+            bubbleColors: [Colors.red, Colors.blue, Colors.purple],
             sizeFactor: 0.2,
-            opacity: 70,
+            bubbleColorAlpha: 70,
             paintingStyle: PaintingStyle.fill,
+            bubbleSpeed: Duration(seconds: 20),
             shape: BubbleShape.circle, //This is the default
           ),
         ),
