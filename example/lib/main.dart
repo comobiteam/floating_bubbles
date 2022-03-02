@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
             bubbleColorAlpha: 70,
             paintingStyle: PaintingStyle.fill,
             bubbleSpeed: Duration(seconds: 20),
-            shape: BubbleShape.circle, //This is the default
+            shape: BubbleShape.circle,
           ),
         ),
       ],
