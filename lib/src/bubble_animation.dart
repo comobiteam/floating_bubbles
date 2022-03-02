@@ -5,22 +5,19 @@ import 'package:simple_animations/simple_animations.dart';
 
 enum OffsetProps { x, y }
 
-/// [tween] creates a tween between X and Y coordinates.
-///
-/// [duration] is the time it takes for a bubble to go from bottom to top.
 class BubbleAnimation {
   final Duration bubbleSpeed;
   final Color bubbleColor;
+  final Random randomValue;
 
   BubbleAnimation({
     required this.bubbleColor,
+    required this.randomValue,
     this.bubbleSpeed = const Duration(seconds: 3),
   }) {
     _restart();
     _shuffle();
   }
-
-  final Random randomValue = Random();
 
   late double size;
   late Duration duration;
