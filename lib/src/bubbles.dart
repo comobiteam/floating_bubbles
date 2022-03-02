@@ -6,24 +6,52 @@ import 'package:floating_bubbles/src/bubble_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 
+/// Used for selecting the shape of the bubble.
 enum BubbleShape { circle, square, roundedRectangle }
 
 /// Creates floating bubbles for [duration] amount of time.
 ///
 /// If you want the floating bubble animation to repeat, then use the constructor
 /// `FloatingBubbles.alwaysRepeating()`.
-///
-/// [strokeWidth] is effective only if [paintingStyle] is set to [PaintingStyle.stroke].
 // ignore: must_be_immutable
 class FloatingBubbles extends StatefulWidget {
+  /// Shape of the bubble, selectable from the [BubbleShape] enum.
   final BubbleShape shape;
+
+  /// The time it will take for the bubble to go from the bottom
+  /// to the top of the screen.
   final Duration bubbleSpeed;
+
+  /// Size factor of the bubble.
+  ///
+  /// Typically should be > 0 and < 0.5. Otherwise the bubble size will be too large.
   final double sizeFactor;
+
+  /// Determines the width of the bubble's stroke.
+  ///
+  /// Is effective only if [paintingStyle] is set to [PaintingStyle.stroke].
   final double strokeWidth;
+
+  /// Number of bubbles displayed on the screen at the same time.
   final int numOfBubblesOnScreen;
+
+  /// Used to determine the degree of transparency of the bubble's color.
+  ///
+  /// Should be between 0 and 255.
   final int bubbleColorAlpha;
+
+  /// List of colors that will randomly be applied to the bubbles.
   final List<Color> bubbleColors;
+
+  /// Determines the bubble's style.
+  ///
+  /// [PaintingStyle.fill] will paint a full bubble.
+  ///
+  /// [PaintingStyle.stroke] will only paint the stroke of the bubble.
   final PaintingStyle paintingStyle;
+
+  /// In case you use the `FloatingBubbles()` constructor,
+  /// this will be the duration of the animation.
   int? duration;
 
   FloatingBubbles({
