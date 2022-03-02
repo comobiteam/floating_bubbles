@@ -1,5 +1,5 @@
-import 'package:floating_bubbles/floating_bubbles.dart';
 import 'package:floating_bubbles/src/bubble_animation.dart';
+import 'package:floating_bubbles/src/bubbles.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 
