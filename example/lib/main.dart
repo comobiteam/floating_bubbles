@@ -1,4 +1,3 @@
-import 'package:example/fps.dart';
 import 'package:floating_bubbles/floating_bubbles.dart';
 import 'package:flutter/material.dart';
 
@@ -23,10 +22,6 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    eachFrame()
-        .take(10000)
-        .transform(const ComputeFps())
-        .listen((fps) => print('fps: $fps'));
     return Stack(
       children: [
         Positioned.fill(
