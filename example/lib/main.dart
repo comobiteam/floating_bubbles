@@ -36,13 +36,13 @@ class HomePage extends StatelessWidget {
         ),
         Positioned.fill(
           child: FloatingBubbles.alwaysRepeating(
-            numOfOnScreenBubbles: 5,
-            bubbleColors: [Colors.red, Colors.blue, Colors.purple],
-            sizeFactor: 0.2,
             bubbleColorAlpha: 70,
-            paintingStyle: PaintingStyle.fill,
+            bubbleColors: [Colors.red, Colors.blue, Colors.purple],
             bubbleSpeed: Duration(seconds: 20),
+            numOfOnScreenBubbles: 5,
+            paintingStyle: PaintingStyle.fill,
             shape: BubbleShape.circle,
+            sizeFactor: 0.2,
           ),
         ),
       ],
