@@ -6,19 +6,22 @@ import 'package:simple_animations/simple_animations.dart';
 enum OffsetProps { x, y }
 
 class BubbleAnimation {
+  /// The time it will take for the bubble to go from the bottom
+  /// to the top of the screen.
   final Duration bubbleSpeed;
+
+  /// Color of the bubble, randomly selected from a List<Color>.
   final Color bubbleColor;
-  final Random randomValue;
 
   BubbleAnimation({
     required this.bubbleColor,
-    required this.randomValue,
     this.bubbleSpeed = const Duration(seconds: 3),
   }) {
     _restart();
     _shuffle();
   }
 
+  final Random randomValue = Random();
   late double size;
   late Duration duration;
   late Duration startTime;

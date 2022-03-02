@@ -116,7 +116,6 @@ class _FloatingBubblesState extends State<FloatingBubbles> {
   void initState() {
     for (int i = 0; i < widget.numOfBubblesOnScreen; i++) {
       bubbles.add(BubbleAnimation(
-          randomValue: randomValue,
           bubbleColor: widget
               .bubbleColors[randomValue.nextInt(widget.bubbleColors.length)],
           bubbleSpeed: widget.bubbleSpeed));
