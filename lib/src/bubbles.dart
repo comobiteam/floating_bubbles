@@ -13,7 +13,6 @@ enum BubbleShape { circle, square, roundedRectangle }
 ///
 /// If you want the floating bubble animation to repeat, then use the constructor
 /// `FloatingBubbles.alwaysRepeating()`.
-// ignore: must_be_immutable
 class FloatingBubbles extends StatefulWidget {
   /// Shape of the bubble, selectable from the [BubbleShape] enum.
   final BubbleShape shape;
@@ -54,7 +53,7 @@ class FloatingBubbles extends StatefulWidget {
 
   /// In case you use the `FloatingBubbles()` constructor,
   /// this will be the duration of the animation.
-  int? duration;
+  final int? duration;
 
   FloatingBubbles({
     required this.bubbleColors,
@@ -94,6 +93,7 @@ class FloatingBubbles extends StatefulWidget {
     this.paintingStyle = PaintingStyle.fill,
     this.shape = BubbleShape.circle,
     this.strokeWidth = 0,
+    this.duration = 0,
   })  : assert(
           sizeFactor > 0 && sizeFactor < 0.5,
           'Size factor cannot be less than 0 or greater than 0.5.',
@@ -105,9 +105,7 @@ class FloatingBubbles extends StatefulWidget {
         assert(
           bubbleColorAlpha >= 0 && bubbleColorAlpha <= 255,
           'Opacity value should be between 0 and 255 inclusive.',
-        ) {
-    duration = 0;
-  }
+        );
 
   @override
   _FloatingBubblesState createState() => _FloatingBubblesState();
