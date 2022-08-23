@@ -22,7 +22,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.center,
       children: [
         Positioned.fill(
           child: Container(
@@ -40,21 +39,6 @@ class HomePage extends StatelessWidget {
             sizeFactor: 0.15,
           ),
         ),
-        Positioned(
-            bottom: 20,
-            child: Row(
-              children: [
-                ElevatedButton(
-                  child: Text('Stop Bubbles'),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 50),
-                ElevatedButton(
-                  child: Text('Start Bubbles'),
-                  onPressed: () {},
-                ),
-              ],
-            ))
       ],
     );
   }
