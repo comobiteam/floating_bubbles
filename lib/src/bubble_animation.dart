@@ -38,6 +38,17 @@ class BubbleAnimation {
       -0.2,
     );
 
+    duration = bubbleSpeed +
+        Duration(
+          milliseconds: randomValue.nextInt(6000),
+        );
+
+    size = 0.2 + randomValue.nextDouble() * 0.4;
+
+    startTime = Duration(
+      milliseconds: DateTime.now().millisecondsSinceEpoch,
+    );
+
     tween = MovieTween()
       ..tween(
         OffsetProps.x,
@@ -45,6 +56,7 @@ class BubbleAnimation {
           begin: startPosition.dx,
           end: endPosition.dx,
         ),
+        duration: duration,
       )
       ..tween(
         OffsetProps.y,
@@ -52,18 +64,8 @@ class BubbleAnimation {
           begin: startPosition.dy,
           end: endPosition.dy,
         ),
+        duration: duration,
       );
-
-    duration = bubbleSpeed +
-        Duration(
-          milliseconds: randomValue.nextInt(6000),
-        );
-
-    startTime = Duration(
-      milliseconds: DateTime.now().millisecondsSinceEpoch,
-    );
-
-    size = 0.2 + randomValue.nextDouble() * 0.4;
   }
 
   /// Shuffles the position of bubbles around the screen.

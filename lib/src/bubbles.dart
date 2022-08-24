@@ -148,8 +148,12 @@ class _FloatingBubblesState extends State<FloatingBubbles> {
     return widget.duration != null && widget.duration == 0
         ? LoopAnimationBuilder(
             tween: ConstantTween(1),
-            duration: Duration(seconds: widget.duration!),
-            builder: (context, child, value) {
+            // In previous versions of the package, the duration field defaulted
+            // to 1 second, but it now is mandatory.
+            // Since we were not using it before, we are passing it the previously
+            // used default value.
+            duration: Duration(seconds: 1),
+            builder: (context, value, child) {
               _simulateBubbles();
               return paintBubbles(
                 bubbles: BubblePainter(
