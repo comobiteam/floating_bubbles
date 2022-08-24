@@ -56,6 +56,7 @@ class BubbleAnimation {
           begin: startPosition.dx,
           end: endPosition.dx,
         ),
+        duration: duration,
       )
       ..tween(
         OffsetProps.y,
@@ -63,6 +64,7 @@ class BubbleAnimation {
           begin: startPosition.dy,
           end: endPosition.dy,
         ),
+        duration: duration,
       );
   }
 
