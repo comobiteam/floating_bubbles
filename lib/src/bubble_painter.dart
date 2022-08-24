@@ -28,7 +28,7 @@ class BubblePainter extends CustomPainter {
 
     for (final bubble in bubbles) {
       final progress = bubble.progress();
-      final MultiTweenValues animation = bubble.tween.transform(progress);
+      final Movie animation = bubble.tween.transform(progress);
       final position = Offset(
         animation.get<double>(OffsetProps.x) * size.width,
         animation.get<double>(OffsetProps.y) * size.height,

@@ -25,7 +25,7 @@ class BubbleAnimation {
   late double size;
   late Duration duration;
   late Duration startTime;
-  late MultiTween<OffsetProps> tween;
+  late MovieTween tween;
 
   /// Restarts the floating bubble animation.
   _restart() {
@@ -38,15 +38,15 @@ class BubbleAnimation {
       -0.2,
     );
 
-    tween = MultiTween<OffsetProps>()
-      ..add(
+    tween = MovieTween()
+      ..tween(
         OffsetProps.x,
         Tween(
           begin: startPosition.dx,
           end: endPosition.dx,
         ),
       )
-      ..add(
+      ..tween(
         OffsetProps.y,
         Tween(
           begin: startPosition.dy,

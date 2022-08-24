@@ -146,8 +146,9 @@ class _FloatingBubblesState extends State<FloatingBubbles> {
   @override
   Widget build(BuildContext context) {
     return widget.duration != null && widget.duration == 0
-        ? LoopAnimation(
+        ? LoopAnimationBuilder(
             tween: ConstantTween(1),
+            duration: Duration(seconds: widget.duration!),
             builder: (context, child, value) {
               _simulateBubbles();
               return paintBubbles(
@@ -162,7 +163,7 @@ class _FloatingBubblesState extends State<FloatingBubbles> {
               );
             },
           )
-        : PlayAnimation(
+        : PlayAnimationBuilder(
             duration: checkToStopAnimation == 0
                 ? Duration(seconds: widget.duration!)
                 : Duration.zero,
